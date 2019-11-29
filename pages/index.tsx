@@ -1,9 +1,15 @@
 import { NextPage } from 'next';
 import bg from './../static/example-mail.png';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  color: red;
+  font-size: 50px;
+`;
 
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <>
-    <h1>Hello world! - user agent: {userAgent}</h1>
+    <Title>Hello world! - user agent: {userAgent}</Title>
     <img src={bg} alt="mail"/>
   </>
 );
