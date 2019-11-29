@@ -1,37 +1,31 @@
 import { NextPage } from 'next';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
+import React from 'react';
 
 const bg = 'static/images/example-mail.png';
-const AristotelicaRegularTtf = 'static/fonts/aristotelica_regular.ttf';
-
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-  }
-  p {
-    font-family: open-sans;
-  }
-  @font-face {
-    font-family: open-sans;
-    src:
-        url(${AristotelicaRegularTtf}) format("truetype");
-    font-style:normal;
-    font-weight:400
-  }
-`;
+import SvgEdu from './../static/icono_educacion.svg';
 
 const Title = styled.h1`
   color: red;
   font-size: 50px;
 `;
 
+const EducationSvg = () => <SvgEdu />;
+
+const IconWarpper = styled.div`
+  path {
+    fill: red;
+  }
+`;
+
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <>
     <Title>Hello world! - user agent: {userAgent}</Title>
-    <GlobalStyle />
     <img src={bg} alt="mail"/>
     <p>holi worls</p>
+    <IconWarpper>
+      <EducationSvg />
+    </IconWarpper>
   </>
 );
 
