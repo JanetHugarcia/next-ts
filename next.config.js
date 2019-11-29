@@ -1,3 +1,3 @@
-const withImages = require('next-images');
+const withTypescript = require('@zeit/next-typescript');
 
-module.exports = withImages();
+module.exports = withTypescript();

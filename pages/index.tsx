@@ -1,6 +1,25 @@
 import { NextPage } from 'next';
-import bg from './../static/example-mail.png';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+const bg = 'static/images/example-mail.png';
+const AristotelicaRegularTtf = 'static/fonts/aristotelica_regular.ttf';
+
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+  }
+  p {
+    font-family: open-sans;
+  }
+  @font-face {
+    font-family: open-sans;
+    src:
+        url(${AristotelicaRegularTtf}) format("truetype");
+    font-style:normal;
+    font-weight:400
+  }
+`;
 
 const Title = styled.h1`
   color: red;
@@ -10,7 +29,9 @@ const Title = styled.h1`
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <>
     <Title>Hello world! - user agent: {userAgent}</Title>
+    <GlobalStyle />
     <img src={bg} alt="mail"/>
+    <p>holi worls</p>
   </>
 );
 
