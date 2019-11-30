@@ -4,6 +4,7 @@ import React from 'react';
 import { withApollo } from '../frontend/config/apollo';
 import SvgEdu from './../static/icono_educacion.svg';
 import { Header } from '../frontend/common/Header';
+import { Clientes } from '../frontend/components/Clientes';
 
 const bg = 'static/images/example-mail.png';
 const Title = styled.h1`
@@ -22,6 +23,7 @@ const IconWarpper = styled.div`
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <>
     <Header />
+    <Clientes />
     <Title>Hello world! - user agent: {userAgent}</Title>
     <img src={bg} alt="mail"/>
     <p>holi worls</p>
