@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import styled from 'styled-components';
 import React from 'react';
+import { withApollo } from '../frontend/config/apollo';
 
 const bg = 'static/images/example-mail.png';
 import SvgEdu from './../static/icono_educacion.svg';
@@ -34,4 +35,4 @@ Home.getInitialProps = async ({ req }) => {
   return { userAgent };
 };
 
-export default Home;
+export default withApollo(Home);
