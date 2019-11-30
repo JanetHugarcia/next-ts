@@ -3,6 +3,6 @@ import { global } from './global';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-    ${fonts},
+    ${fonts}
     ${global}
 `;
