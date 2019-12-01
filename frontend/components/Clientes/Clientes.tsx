@@ -1,31 +1,36 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import { CLIENTES_QUERY } from '../../queries/index';
-// import gql from 'graphql-tag';
-
-// export const CLIENTES_QUERY = gql`
-//     query {
-
-//         getClientes {
-//             id
-//             nombre
-//             apellido
-//             empresa
-//         }
-//     }
-// `;
+import { Button } from '../../common/Button';
+import {
+    Container,
+    Title,
+    List,
+    Item,
+    Name
+} from './styled';
 
 export const Clientes = () => (
-    <>
     <Query query={CLIENTES_QUERY}>
         {({loading, error, data}) => {
             if (loading) return <p>cargando...</p>;
             if (error) return <p>{`error: ${error.message}`}</p>;
             console.log(data, 'data');
-            return <p>Listado de clientes</p>
+            return (
+                <Container>
+                    <Title>Listado de clientes</Title>
+                    <List>
+                    {
+                        data.getClientes.map((cliente) => (
+                            <Item key={cliente.id}>
+                                <Name>{cliente.nombre} {cliente.apellido}</Name>
+                                <Button text="Editar Cliente" />
+                            </Item>
+                        ))
+                    }
+                    </List>
+                </Container>
+            )
         }}
     </Query>
-    {console.log(CLIENTES_QUERY)}
-    <p>holi</p>
-    </>
 )

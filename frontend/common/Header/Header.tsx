@@ -4,7 +4,7 @@ import { IconWrapper } from './../Icon';
 
 export const Header: React.FC = () => (
     <Wrapper>
-        <p>Header</p>
+        <p>Project</p>
         <IconWrapper />
     </Wrapper>
 )

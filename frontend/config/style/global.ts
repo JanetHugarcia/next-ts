@@ -4,8 +4,4 @@ export const global = `
     padding: 0;
     box-sizing: border-box;
   }
-
-  p {
-    font-family: open-sans;
-  }
 `;
