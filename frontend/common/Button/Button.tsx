@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const Button: React.FC<Props> = ({text}) => (
-    <Wrapper>
-        {text}
+    <Wrapper >
+      {text}
     </Wrapper>
-)
+  )

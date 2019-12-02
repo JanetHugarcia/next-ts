@@ -20,6 +20,7 @@ app.prepare().then(() => {
   // middlewares
   server.applyMiddleware({app})
   app.use(morgan('dev'));
+  // app.use(express.static('static'));
 
   //routes
   app.all('*', (req: express.Request, res: express.Response) => {

@@ -11,9 +11,4 @@ const Home: NextPage = () => (
   </>
 );
 
-Home.getInitialProps = async ({ req }) => {
-  const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
-  return { userAgent };
-};
-
 export default withApollo(Home);

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SvgEdu from './../../../static/icono_educacion.svg';
+import { COLORS } from './../../../frontend/config/ui';
 
 const Wrapper = styled.span`
   display: inline-block;
@@ -9,7 +10,7 @@ const Wrapper = styled.span`
       height: 15px;
   }
   path {
-    fill: #fff;
+    fill: ${COLORS.BLACK_LIGHT};
   }
 `;
 

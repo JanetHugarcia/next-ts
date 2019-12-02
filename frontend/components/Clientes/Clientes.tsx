@@ -2,9 +2,9 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import { CLIENTES_QUERY } from '../../queries/index';
 import { Button } from '../../common/Button';
+import Link from 'next/link';
+import { Title, Container } from '../../utils/styled/index';
 import {
-    Container,
-    Title,
     List,
     Item,
     Name
@@ -24,7 +24,9 @@ export const Clientes = () => (
                         data.getClientes.map((cliente) => (
                             <Item key={cliente.id}>
                                 <Name>{cliente.nombre} {cliente.apellido}</Name>
-                                <Button text="Editar Cliente" />
+                                <Link href="/cliente/editar/[idCliente]" as={`/cliente/editar/${cliente.id}`}>
+                                    <a><Button text="Editar Cliente" /></a>
+                                </Link>
                             </Item>
                         ))
                     }
